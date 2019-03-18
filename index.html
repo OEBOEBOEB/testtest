@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="1999 派工即時推播" />
+    <meta property="og:description" content="設定個性化的派工推播通知，讓你一目瞭然高雄各區災害" />
+	<meta property="og:image" content="wrench_.png" />
+    <title>1999 派工即時推播</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://loading.io/css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="https://loading.io/css/transition.css"/>
+    <link rel="Shortcut Icon" type="image/x-icon" href="pic/wrench_.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+    
+</head>
+<body>
+    <div class="wrap">
+        <div class="loading-page">
+            <div class="loading-content">
+                <img src="pic/wrench.png" alt="" class="ld ld-wrench" style="animation-duration:1.8s">
+                <p>資料載入中...</p>
+            </div>
+        </div>
+        <div class="cover">
+            <video id="bgVideo" autoplay muted loop>
+                <source src="pic/bgVideo.webm" type="video/webm">
+            </video>
+            <header class="ldt-power-on" style="animation-duration: 2s; animation-delay: 3s;">
+                <h1 class="ld ld-blur" style="animation-duration: 4s;">1999 派工即時推播</h1>
+            </header>
+            <div class="content ld ldt-zoom-in" style="animation-duration: 1.5s; animation-delay: 3s;">
+                <div class="content-block">
+                    <div class="content-text">
+                        <h2>設定個性化的派工推播通知</h2>
+                        <h2>讓你一目瞭然高雄各區災害</h2>
+                    </div>
+                    <div id="content-icon" class="animated infinite fadeOutRight">
+                        <img src="pic/right.png" alt="">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <footer class="ld ldt-slide-bottom-in" style="animation-duration: 2s; animation-delay: 3s;">
+                
+                <div id="social-link">
+                    <a href="" style="background-image: url('pic/facebook.png');">
+                        <img src="pic/facebook.png" alt="">
+                    </a>
+                    <a href="" style="background-image: url('pic/twitter.png');">
+                        <img src="pic/twitter.png" alt="">
+                    </a>
+                    <a href="" style="background-image: url('pic/instagram.png');">
+                        <img src="pic/instagram.png" alt="">
+                    </a>
+                    <a href="" style="background-image: url('pic/googleplus.png');">
+                        <img src="pic/googleplus.png" alt="">
+                    </a>
+                    <a href="" style="background-image: url('pic/github.png');">
+                        <img src="pic/github.png" alt="">
+                    </a>
+                </div>
+                <div id="copyright">
+                    <p>Copyright © 2018 NUKIM. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+        
+        <div class="main hide">
+            <div class="side-block">
+                <div class="side-ctrl">
+                <i class="material-icons md-36">keyboard_arrow_left</i>
+                </div>
+                <div class="side-bar">
+                    <div class="nav-bar">
+                        <ul>
+                        <li class="tooltip">
+                            <span class="tooltip-text">通知</span>
+                            <a href="#notify-history"><i class="material-icons ">notifications</i></a>
+                        </li>
+                        <li class="tooltip">
+                            <span class="tooltip-text">探索</span>
+                            <a href="#map-filter"><i class="material-icons">place</i></a>
+                        </li>
+                        <li class="tooltip">
+                            <span class="tooltip-text">推播設定</span>
+                            <a href="#notify-setting"><i class="material-icons">settings</i></a>
+                        </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="notify-history" class="ctrl-block">
+                        <div class="block-title">
+                        <h2>通知</h2>
+                        </div>
+                        <div class="history-content">
+                            <ul id="LocationList">
+
+                            </ul>
+                    
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="map-filter" class="ctrl-block">
+                        <div class="block-title">
+                            <h2>在地圖上搜尋</h2>
+                            <!-- <input type="button" id="AddAllMarkers" value="讀取資料" onclick="InitPageSel();"> -->
+                        </div>
+                        <div class="filter-select">
+                            <select name="region" id="RegionSelector" onchange="Filter();">
+                                <option value="empty">所有地區</option>
+                            </select>
+                        </div>
+                        <div class="filter-select">
+                            <select name="disaster" id="TitleSelector" onchange="Filter();">
+                                <option value="empty">所有類型</option>
+                            </select>
+                        </div>
+                        <!-- <div class="history-content">
+                            <ul id="LocationList">
+
+                            </ul>                
+                        </div> -->
+                
+                    </div>
+        
+                    <div id="notify-setting" class="ctrl-block">
+                        <div class="block-title">
+                        <h2>推播設定</h2>
+                        </div>
+                        <div class="filter-select">
+                        <select name="region" id="RegionSelector2" onchange="setUserNotify()">
+                            <option value="empty">所有地區</option>
+                        </select>
+                        </div>
+                        <div class="filter-select">
+                        <select name="disaster" id="TitleSelector2" onchange="setUserNotify()">
+                            <option value="empty">所有類型</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="map"></div>
+        </div>
+        
+    
+        
+        
+    </div>
+    
+    <script src="js/notificationTest.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3nA__tOQFUw4Q-onTapTo9Un0RBLrDhw&callback=initMap" async defer></script>
+    <script src="js/style.js"></script>
+    <script src="js/FilterScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+/*  http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS Reset-END */
+
+/* Basic Settings */
+/*
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+
+@font-face {
+  font-family: 'cwTeXFangSong';
+  font-style: normal;
+  font-weight: 500;
+  src:  url(//fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot);
+  src:  url(//fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot?#iefix) format('embedded-opentype'),
+        url(//fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.ttf) format('truetype');
+}
+*/
+
+* {
+  box-sizing: border-box;
+}
+  
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Microsoft JhengHei', sans-serif;
+  font-size: 12px;
+  color: #292929;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+  width: 120px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 20px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 3px;
+  -moz-padding-start: 3px;
+  background-color: #f3f3f3; /* fallback color if gradients are not supported */
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png'), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png'), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Fx (3.6 to 15) */
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png'), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png'), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png'), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid #8e8b82;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: #343434;
+  font-family: 'Microsoft JhengHei', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.material-icons.md-18 { 
+  font-size: 18px; 
+}
+
+.material-icons.md-24 { 
+  font-size: 24px; 
+}
+
+.material-icons.md-36 { 
+  font-size: 36px; 
+}
+
+.material-icons.md-48 { 
+  font-size: 48px; 
+}
+
+/* START */
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+}
+
+.loading-page {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: relative;
+  z-index: 9999;
+}
+
+.loading-content {
+  margin: 0 auto;
+  padding-top: 190px;
+}
+
+.loading-content img {
+  display: block;
+  width: 135px;
+  margin: 0 auto;
+}
+
+.loading-content p {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #beb6b6;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.cover {
+  position: relative;
+  z-index: 9998;
+}
+
+video#bgVideo {
+  position: fixed;
+  left: 0; 
+  top: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  background: url("../pic/bgPic.jpg") no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+header {
+  width: 100%;
+  margin-top: 25px;
+  
+}
+
+header h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 2;
+  letter-spacing: .2rem;
+  padding-top: 25px;
+  text-shadow: .3rem -.3rem .3rem #878787;
+}
+
+.content {
+  width: 100%;
+  margin-top: 35px;
+  padding: 25px; 
+}
+
+.content-block {
+  width: 500px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, .7);
+  cursor: pointer;
+}
+
+.content-block:hover {
+  background: rgba(255, 255, 255, .9);
+}
+
+.content-text {
+  width: 100%;
+  margin: 0 auto;
+  /* float: left; */
+}
+
+.content-text h2{
+  padding: 5px 0;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 55px;
+}
+
+#content-icon {
+  width: 100px;
+  animation-duration: 1.5s;
+  /* float: left; */
+  position: relative;
+}
+
+#content-icon img {
+  position: absolute;
+  top: -115px;
+  right: -360px;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, .7);
+  padding: 15px 0;
+}
+
+footer p {
+  text-align: center;
+  color: #beb6b6;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+}
+
+#copyright {
+  
+}
+
+#social-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#social-link a {
+  background-size: 4rem;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: block;
+  transition: opacity .2s ease-in-out;
+}
+
+#social-link a:hover {
+  opacity: 1;
+}
+  
+
+#social-link a img {
+  width: 4rem;
+  -webkit-transform: scale(1);
+  transform: scale(1);  
+  opacity: 1;
+}
+
+#social-link a:hover img {
+  transition: all .3s ease;
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5); 
+  opacity: 0;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.side-block {
+  position: relative;
+}
+
+.side-block_Hide {
+  left: -340px;
+}
+
+.side-ctrl {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 54px;
+  left: 350px;
+  z-index: 999;
+  box-shadow: 3px 3px 5px #e9dcbe;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+}
+
+.side-ctrl i {
+  text-align: center;
+  line-height: 40px;
+  margin-left: -3px;
+}
+
+.side-bar {
+  width: 350px;
+  height: 100vh;
+  background: #f3f3f3;
+  box-shadow: -5px 15px 20px #343434;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 998;
+}
+
+.nav-bar ul li {
+  width: 33.3%;
+  float: left;
+  padding: 1.2rem 0;
+  cursor: pointer;
+  color: #343434;
+  background: #8e8b82;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-bar ul li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.nav-bar ul li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 33.4%;
+}
+
+.nav-bar ul li:hover {
+  opacity: 0.7;
+}
+
+.nav-bar a {
+  display: block;
+  color: #343434;
+  text-align: center;
+}
+
+.nav-bar .nav-isActive {
+  box-shadow: 0px -8px 0px #e9dcbe inset;
+  background: #343434;
+  color: #fff;
+}
+
+.nav-bar .nav-isActive a {
+  color: #fff;
+}
+
+.nav-bar .nav-isActive:hover, 
+.nav-bar .nav-isActive a:hover {
+  opacity: 1;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+	cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.block-title {
+  margin: 40px 20px;
+  margin-right: 30px;
+  padding-bottom: 15px;
+  font-size: 2rem;
+  font-weight: 900;
+  border-bottom: 3px solid #e9dcbe;
+}
+
+.history-content {
+  margin: 20px 30px;
+  overflow-y: scroll;
+  height: 45vh;
+}
+
+.history-data {
+  padding: 10px 0;
+  border-bottom: 1px solid #AAAAAA;
+  cursor: pointer;
+  transition: .4 ease-in-out;
+}
+
+.history-data:hover,
+.history-data:focus,
+.history-data:active {
+  background: #e8e7e5;
+}
+
+.history-data h3 {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.history-data h4 {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 7.5px;
+}
+
+.history-data p {
+  font-size: 14px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+
+.filter-select {
+  width: 70%;
+  margin: 30px auto;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+  background: #666666;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  video {
+      display:none;
+  }
+
+  html {
+      background: url("../pic/bgPic.jpg") no-repeat;
+      background-size: cover;
+      overflow: hidden;
+  }
+
+  header h1{
+    font-size: 3rem;
+  }
+
+  .content-block {
+    width: 70%;
+    height: auto;
+    padding: 2.5%;
+  }
+
+  .content-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .content-icon, 
+  .content-icon img {
+    display: none; 
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  .content-block {
+    width: 70%;
+    height: auto;
+    padding: 2.5%;
+  }
+
+  .content-text h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  .content-block {
+    width: 70%;
+    height: auto;
+    padding: 1.5%;
+  }
+
+  .content-text h2 {
+    font-size: 1.2rem;
+  }
+}
